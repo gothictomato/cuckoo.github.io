@@ -1,0 +1,30 @@
+{
+    "lang": "en",
+    "dir": "ltr",
+    "name": "Cuckoo",
+    "description": "A productivity timer for remote teams.",
+    "short_name": "Cuckoo",
+    "icons": [
+        {
+            "src": "/images/app-icons/app-icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/images/app-icons/app-icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/images/app-icons/app-icon-1024.png",
+            "type": "image/png",
+            "sizes": "1024x1024"
+        }
+    ],
+    "scope": "/",
+    "start_url": "/?utm_source=applaunch",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#424465",
+    "background_color": "#6b6de2"
+}

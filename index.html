@@ -1,79 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Cuckoo – A productivity timer for remote teams.</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" media="all">
-    <meta charset="utf-8">
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="shortcut icon" href="/images/favicon.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="on" http-equiv="cleartype">
-    <meta content="True" name="HandheldFriendly">
-    <meta content="320" name="MobileOptimized">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Cuckoo">
-    <meta name="format-detection" content="telephone=no">
-    <meta content="initial-scale=1, user-scalable=no, width=device-width" name="viewport">
-    <style>html { -webkit-text-size-adjust: 100%; }</style>
-    <meta name="theme-color" content="#424465">
-    <link href="/images/app-icons/apple-touch-icon-180.png" sizes="180x180" rel="apple-touch-icon">
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <meta name="description" content="Create a timer, share it with your team and get ready for more productive meetings.">
-    <meta name="keywords" content="productivity, timer, remote, teams, pomodoro">
-    <meta name="application-name" content="Cuckoo">
-    <meta property="og:title" content="Cuckoo – A productivity timer for remote teams.">
-    <meta property="og:type" content="product">
-    <meta property="og:image" content="https://cuckoo.team/images/og_image.png">
-    <meta property="og:url" content="https://cuckoo.team">
-    <meta property="og:description" content="Create a timer, share it with your team and get ready for more productive meetings.">
-    <meta property="al:ios:app_name" content="Cuckoo">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Cuckoo – A productivity timer for remote teams.">
-    <meta name="twitter:description" content="Create a timer, share it with your team and get ready for more productive meetings.">
-    <meta name="twitter:image" content="https://cuckoo.team/images/og_image.png">
-    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-MFKLS86"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-MFKLS86');
-    </script>
-  </head>
-  <body>
-    <noscript>
-      <iframe>src="https://www.googletagmanager.com/ns.html?id=GTM-MFKLS86" height="0" width="0" style="display:none;visibility:hidden"</iframe>
-      <div class="browser-warning">
-        <p>Your browser has <strong>javascript turned off</strong>. Please <a href="http://www.activatejavascript.org/">enable javascript</a>, or you may need to <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
-        </p>
-      </div>
-    </noscript>
-    <div class="page page--onboarding">
-      <div class="logo">Cuckoo</div>
-      <div class="page__wrapper">
-        <div class="page__cover"><img class="img--egg-icon" src="images/cuckoo-icon.svg" width="424" height="424" alt="Cuckoo pomodoro timer app for teams"></div>
-        <div class="page__body">
-          <div class="header">
-            <h1 class="title title--primary">Welcome to Cuckoo</h1>
-            <h2 class="title title--secondary">A productivity timer for remote teams.</h2>
-          </div>
-          <form action="new-cuckoo" method="post">
-            <div class="form__row"><label class="label">Create a shareable link</label><label class="label--placeholder" for="slug">cuckoo.team/</label><input class="input input--default input--slug" type="text" id="slug" name="slug" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus="autofocus" placeholder="session-name"></div>
-            <div class="form__row form__row--action"><button class="btn btn--skip js-onboarding-submit js-sound-mouseHover" type="submit">Skip</button><button class="btn btn--submit js-onboarding-submit js-sound-mouseHover" type="submit"></button></div>
-          </form>
+    <head>
+        <title>Cuckoo – A productivity timer for remote teams.</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" media="all">
+        <meta charset="utf-8">
+        <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+        <link rel="dns-prefetch" href="//www.google-analytics.com">
+        <link rel="shortcut icon" href="/images/favicon.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="on" http-equiv="cleartype">
+        <meta content="True" name="HandheldFriendly">
+        <meta content="320" name="MobileOptimized">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Cuckoo">
+        <meta name="format-detection" content="telephone=no">
+        <meta content="initial-scale=1, user-scalable=no, width=device-width" name="viewport">
+        <style>
+            html {
+                -webkit-text-size-adjust: 100%;
+            }
+        </style>
+        <meta name="theme-color" content="#424465">
+        <link href="/images/app-icons/apple-touch-icon-180.png" sizes="180x180" rel="apple-touch-icon">
+        <!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+        <meta name="description" content="Create a timer, share it with your team and get ready for more productive meetings.">
+        <meta name="keywords" content="productivity, timer, remote, teams, pomodoro">
+        <meta name="application-name" content="Cuckoo">
+        <meta property="og:title" content="Cuckoo – A productivity timer for remote teams.">
+        <meta property="og:type" content="product">
+        <meta property="og:image" content="https://cuckoo.team/images/og_image.png">
+        <meta property="og:url" content="https://cuckoo.team">
+        <meta property="og:description" content="Create a timer, share it with your team and get ready for more productive meetings.">
+        <meta property="al:ios:app_name" content="Cuckoo">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Cuckoo – A productivity timer for remote teams.">
+        <meta name="twitter:description" content="Create a timer, share it with your team and get ready for more productive meetings.">
+        <meta name="twitter:image" content="https://cuckoo.team/images/og_image.png">
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0]
+                  , j = d.createElement(s)
+                  , dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            }
+            )(window, document, 'script', 'dataLayer', 'GTM-MFKLS86');
+        </script>
+    </head>
+    <body>
+        <noscript>
+            <iframe>src="https://www.googletagmanager.com/ns.html?id=GTM-MFKLS86" height="0" width="0" style="display:none;visibility:hidden"</iframe>
+            <div class="browser-warning">
+                <p>
+                    Your browser has <strong>javascript turned off</strong>
+                    . Please <a href="http://www.activatejavascript.org/">enable javascript</a>
+                    , or you may need to <a href="http://browsehappy.com/">upgrade your browser</a>
+                    .
+                </p>
+</p></div></noscript>
+<div class="page page--onboarding">
+    <div class="logo">Cuckoo</div>
+    <div class="page__wrapper">
+        <div class="page__cover">
+            <img class="img--egg-icon" src="images/cuckoo-icon.svg" width="424" height="424" alt="Cuckoo pomodoro timer app for teams">
         </div>
-      </div>
+        <div class="page__body">
+            <div class="header">
+                <h1 class="title title--primary">Welcome to Cuckoo</h1>
+                <h2 class="title title--secondary">A productivity timer for remote teams.</h2>
+            </div>
+            <form action="new-cuckoo" method="post">
+                <div class="form__row">
+                    <label class="label">Create a shareable link</label>
+                    <label class="label--placeholder" for="slug">cuckoo.team/</label>
+                    <input class="input input--default input--slug" type="text" id="slug" name="slug" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus="autofocus" placeholder="session-name">
+                </div>
+                <div class="form__row form__row--action">
+                    <button class="btn btn--skip js-onboarding-submit js-sound-mouseHover" type="submit">Skip</button>
+                    <button class="btn btn--submit js-onboarding-submit js-sound-mouseHover" type="submit"></button>
+                </div>
+            </form>
+        </div>
     </div>
-    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="cuckoo.vendor.min.js" defer="defer"></script>
-    <script type="text/javascript" src="cuckoo.min.js" defer="defer"></script>
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/nwmatcher/1.3.6/nwmatcher.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
-    <![endif]-->
-  </body>
-</html>
+</div>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="cuckoo.vendor.min.js" defer="defer"></script>
+<script type="text/javascript" src="cuckoo.min.js" defer="defer"></script>
+<!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/nwmatcher/1.3.6/nwmatcher.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+<![endif]-->
+</body></html>
